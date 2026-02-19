@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Hospital Queue Management System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f4f9ff;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:#0a66c2;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:28px;
+}
+
+/* NAV */
+nav{
+    background:#084a94;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:12px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* SECTION */
+section{
+    padding:40px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:24px;
+    color:#0a66c2;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+/* FORM */
+form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+form input, form select{
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+form button{
+    grid-column: span 2;
+    padding:12px;
+    background:#0a66c2;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+form button:hover{
+    background:#084a94;
+}
+
+/* QUEUE BOX */
+.queue-box{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.queue-item{
+    flex:1;
+    min-width:200px;
+    background:#e9f3ff;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.queue-item h3{
+    font-size:22px;
+    color:#0a66c2;
+}
+
+/* TOKEN DISPLAY */
+.token-display{
+    text-align:center;
+    font-size:40px;
+    font-weight:bold;
+    color:#d62828;
+    margin-top:10px;
+}
+
+/* DOCTOR AVAILABILITY */
+.doctor-list{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.doctor-card{
+    flex:1;
+    min-width:200px;
+    background:#f1f9ff;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.available{
+    color:green;
+    font-weight:bold;
+}
+
+.busy{
+    color:red;
+    font-weight:bold;
+}
+
+/* ANALYTICS */
+.analytics{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.analytics-card{
+    flex:1;
+    min-width:200px;
+    background:#e3f2fd;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.analytics-card h2{
+    font-size:28px;
+    color:#0a66c2;
+}
+
+/* FOOTER */
+footer{
+    background:#0a66c2;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+@media(max-width:768px){
+    form{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🏥 Smart Hospital Queue Management System</h1>
+    <p>Reducing Waiting Time & Improving Hospital Efficiency</p>
+</header>
+
+<nav>
+    <a href="#">Appointment</a>
+    <a href="#">Live Queue</a>
+    <a href="#">Doctors</a>
+    <a href="#">Analytics</a>
+</nav>
+
+<!-- APPOINTMENT BOOKING -->
+<section>
+    <h2 class="section-title">Online Appointment Booking</h2>
+    <div class="card">
+        <form>
+            <input type="text" placeholder="Patient Name">
+            <input type="tel" placeholder="Mobile Number">
+            <input type="email" placeholder="Email Address">
+            <select>
+                <option>Select Department</option>
+                <option>General Medicine</option>
+                <option>Cardiology</option>
+                <option>Orthopedics</option>
+                <option>Pediatrics</option>
+            </select>
+            <input type="date">
+            <select>
+                <option>Select Doctor</option>
+                <option>Dr. Sharma</option>
+                <option>Dr. Reddy</option>
+                <option>Dr. Mehta</option>
+            </select>
+            <button>Book Appointment</button>
+        </form>
+    </div>
+</section>
+
+<!-- LIVE QUEUE TRACKING -->
+<section>
+    <h2 class="section-title">Live Queue Tracking</h2>
+    <div class="queue-box">
+        <div class="queue-item">
+            <h3>Current Token</h3>
+            <div class="token-display">A-102</div>
+        </div>
+        <div class="queue-item">
+            <h3>Patients Waiting</h3>
+            <div class="token-display">12</div>
+        </div>
+        <div class="queue-item">
+            <h3>Estimated Wait</h3>
+            <div class="token-display">25 mins</div>
+        </div>
+    </div>
+</section>
+
+<!-- DOCTOR AVAILABILITY -->
+<section>
+    <h2 class="section-title">Doctor Availability</h2>
+    <div class="doctor-list">
+        <div class="doctor-card">
+            <h3>Dr. Sharma</h3>
+            <p>General Medicine</p>
+            <p class="available">Available</p>
+        </div>
+        <div class="doctor-card">
+            <h3>Dr. Reddy</h3>
+            <p>Cardiology</p>
+            <p class="busy">Busy</p>
+        </div>
+        <div class="doctor-card">
+            <h3>Dr. Mehta</h3>
+            <p>Orthopedics</p>
+            <p class="available">Available</p>
+        </div>
+    </div>
+</section>
+
+<!-- SMS / EMAIL REMINDER -->
+<section>
+    <h2 class="section-title">SMS & Email Reminder System</h2>
+    <div class="card">
+        <p>
+            ✔ Automatic SMS confirmation after booking  
+            ✔ Email reminder before appointment  
+            ✔ Queue status notifications  
+            ✔ Token alert when your turn is near  
+        </p>
+    </div>
+</section>
+
+<!-- ADMIN ANALYTICS DASHBOARD -->
+<section>
+    <h2 class="section-title">Admin Analytics Dashboard</h2>
+    <div class="analytics">
+        <div class="analytics-card">
+            <h2>150</h2>
+            <p>Appointments Today</p>
+        </div>
+        <div class="analytics-card">
+            <h2>45</h2>
+            <p>Patients in Queue</p>
+        </div>
+        <div class="analytics-card">
+            <h2>8</h2>
+            <p>Doctors Available</p>
+        </div>
+        <div class="analytics-card">
+            <h2>92%</h2>
+            <p>Efficiency Rate</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Smart Hospital Queue Management System | Designed for Efficient Healthcare
+</footer>
+
+</body>
+</html>
