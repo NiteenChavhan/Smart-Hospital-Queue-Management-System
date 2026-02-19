@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Smart Hospital Queue Management System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right, #00b4d8, #0077b6);
+}
+
+/* Registration Container */
+.register-container{
+    background:white;
+    padding:35px;
+    width:400px;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+.register-container h2{
+    margin-bottom:10px;
+    color:#023e8a;
+}
+
+.register-container p{
+    font-size:14px;
+    margin-bottom:20px;
+    color:#555;
+}
+
+/* Input Fields */
+.input-group{
+    margin-bottom:15px;
+    text-align:left;
+}
+
+.input-group label{
+    font-size:14px;
+    color:#333;
+}
+
+.input-group input,
+.input-group select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    outline:none;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+    border-color:#0077b6;
+}
+
+/* Button */
+.btn{
+    width:100%;
+    padding:10px;
+    background:#0077b6;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+    font-size:16px;
+}
+
+.btn:hover{
+    background:#023e8a;
+}
+
+/* Footer Text */
+.footer-text{
+    margin-top:15px;
+    font-size:13px;
+    color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="register-container">
+    <h2>Create Account</h2>
+    <p>Register to access Smart Hospital Queue Management System</p>
+
+    <form>
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Create password" required>
+        </div>
+
+        <div class="input-group">
+            <label>Select Role</label>
+            <select required>
+                <option value="">-- Choose Role --</option>
+                <option>Patient</option>
+                <option>Doctor</option>
+                <option>Admin</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+    </form>
+
+    <div class="footer-text">
+        © 2026 Smart Hospital Queue Management System
+    </div>
+</div>
+
+</body>
+</html>
