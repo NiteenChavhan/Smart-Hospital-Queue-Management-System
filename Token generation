@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Token Generation - Smart Hospital Queue</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to right, #0077b6, #00b4d8);
+}
+
+/* Container */
+.token-container{
+    background:white;
+    padding:40px;
+    width:380px;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+.token-container h2{
+    color:#023e8a;
+    margin-bottom:15px;
+}
+
+.token-container p{
+    font-size:14px;
+    color:#555;
+    margin-bottom:15px;
+}
+
+/* Input */
+input{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+input:focus{
+    border-color:#0077b6;
+    outline:none;
+}
+
+/* Token Display */
+.token-box{
+    font-size:30px;
+    font-weight:bold;
+    color:#0077b6;
+    margin:15px 0;
+}
+
+/* Button */
+.btn{
+    width:100%;
+    padding:10px;
+    background:#0077b6;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.btn:hover{
+    background:#023e8a;
+}
+
+.message{
+    margin-top:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.success{
+    color:green;
+}
+
+.error{
+    color:red;
+}
+</style>
+</head>
+
+<body>
+
+<div class="token-container">
+    <h2>Token Generation</h2>
+    <p>Enter your preferred token number</p>
+
+    <input type="number" id="tokenInput" placeholder="Enter Token Number">
+
+    <button class="btn" onclick="addToken()">Add Token</button>
+
+    <div class="token-box" id="tokenNumber">--</div>
+    <div class="message" id="message"></div>
+</div>
+
+<script>
+let tokenList = [];   // Store existing tokens
+
+function addToken() {
+
+    let tokenValue = document.getElementById("tokenInput").value;
+    let message = document.getElementById("message");
+
+    if(tokenValue === ""){
+        message.innerText = "Please enter a token number!";
+        message.className = "message error";
+        return;
+    }
+
+    if(tokenList.includes(tokenValue)){
+        message.innerText = "Token already exists!";
+        message.className = "message error";
+    } 
+    else{
+        tokenList.push(tokenValue);
+        document.getElementById("tokenNumber").innerText = tokenValue;
+        message.innerText = "Token added successfully!";
+        message.className = "message success";
+    }
+
+    document.getElementById("tokenInput").value = "";
+}
+</script>
+
+</body>
+</html>
