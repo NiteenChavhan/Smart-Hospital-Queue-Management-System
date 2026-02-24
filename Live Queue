@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Live Queue Display</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* HEADER */
+.header{
+    background:#00b4d8;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+/* MAIN SCREEN */
+.main-container{
+    flex:1;
+    display:flex;
+    padding:20px;
+    gap:20px;
+}
+
+/* CURRENT TOKEN */
+.current-token{
+    flex:1;
+    background:#1b263b;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.current-token h2{
+    font-size:30px;
+    margin-bottom:20px;
+    color:#00d4ff;
+}
+
+.token-number{
+    font-size:90px;
+    font-weight:bold;
+    color:#00ff88;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0.6;}
+}
+
+/* NEXT TOKENS */
+.next-tokens{
+    flex:1;
+    background:#16213e;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.next-tokens h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#ffd60a;
+}
+
+.token-list{
+    list-style:none;
+}
+
+.token-list li{
+    background:#0f3460;
+    margin:10px 0;
+    padding:15px;
+    border-radius:10px;
+    font-size:22px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.token-list li:hover{
+    background:#1f4068;
+}
+
+/* DEPARTMENT SECTION */
+.departments{
+    background:#0b132b;
+    padding:15px;
+    display:flex;
+    justify-content:space-around;
+    font-size:20px;
+}
+
+.department-box{
+    text-align:center;
+}
+
+.department-box h3{
+    color:#00e5ff;
+}
+
+.department-box span{
+    font-size:26px;
+    font-weight:bold;
+    color:#90ff00;
+}
+
+/* FOOTER */
+.footer{
+    background:#00b4d8;
+    text-align:center;
+    padding:10px;
+    font-size:16px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+🏥 SMART HOSPITAL LIVE QUEUE DISPLAY
+</div>
+
+<div class="main-container">
+
+    <!-- Current Token -->
+    <div class="current-token">
+        <h2>Now Serving</h2>
+        <div class="token-number">A-102</div>
+        <p>Room 3 - Dr. Sharma</p>
+    </div>
+
+    <!-- Next Tokens -->
+    <div class="next-tokens">
+        <h2>Next Tokens</h2>
+        <ul class="token-list">
+            <li>A-103</li>
+            <li>A-104</li>
+            <li>A-105</li>
+            <li>A-106</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Department-wise Display -->
+<div class="departments">
+    <div class="department-box">
+        <h3>General Medicine</h3>
+        <span>G-210</span>
+    </div>
+    <div class="department-box">
+        <h3>Cardiology</h3>
+        <span>C-115</span>
+    </div>
+    <div class="department-box">
+        <h3>Orthopedics</h3>
+        <span>O-078</span>
+    </div>
+    <div class="department-box">
+        <h3>Pediatrics</h3>
+        <span>P-052</span>
+    </div>
+</div>
+
+<div class="footer">
+Please wait for your token number to be displayed. Thank You!
+</div>
+
+</body>
+</html>
